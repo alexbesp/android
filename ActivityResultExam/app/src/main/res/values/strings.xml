@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">ActivityResultExam</string>
+    <string name="item_settings">Настройки</string>
+    <string name="item_about">Об авторе</string>
+    <string name="item_site">Оф.сайт</string>
+</resources>

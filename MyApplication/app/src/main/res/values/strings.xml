@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">My Application</string>
+    <string name="hello_world">Hello World</string>
+    <string name="btn_text">Привет!</string>
+    <string name="btn_text2">сказать привет!</string>
+
+</resources>

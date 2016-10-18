@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">IntentFilterExam</string>
+    <string name="explicit_call">Явный вызов</string>
+    <string name="implicit_call">Неявный вызов</string>
+    <string name="open_contacts">Открыть контакты</string>
+</resources>

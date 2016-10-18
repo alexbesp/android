@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+             android:layout_width="match_parent"
+             android:layout_height="match_parent">
+
+    <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+        <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Узнать ориентацию"
+                android:id="@+id/button2" android:onClick="onPosition" android:layout_gravity="center_horizontal"
+                android:layout_column="27"/>
+        <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Вывод уведомленя"
+                android:id="@+id/button" android:layout_gravity="center_horizontal" android:onClick="onShow"
+                android:layout_column="28"/>
+        <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="New RadioButton"
+                android:id="@+id/radioButton" android:layout_gravity="center_horizontal" android:layout_column="29"/>
+    </TableRow>
+</TableLayout>
