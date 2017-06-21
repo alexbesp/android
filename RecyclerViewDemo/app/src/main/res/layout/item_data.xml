@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="88dp"
+    android:id="@+id/root_list_item"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <ImageView
+        android:id="@+id/imv_list_item_circle"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        tools:background="@color/BLUE"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginLeft="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginBottom="16dp"
+        android:layout_marginTop="16dp" />
+
+
+    <ImageView
+        android:id="@+id/imv_date_and_time"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:src="@drawable/ic_event_black_24dp"
+        app:layout_constraintBottom_toBottomOf="@+id/imv_list_item_circle"
+        android:layout_marginBottom="0dp"
+        app:layout_constraintLeft_toRightOf="@+id/imv_list_item_circle"
+        android:layout_marginLeft="8dp" />
+
+    <TextView
+        android:id="@+id/tv_message"
+        style="@style/Text.Primary"
+        android:layout_width="0dp"
+        app:layout_constraintWidth_default="wrap"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginLeft="0dp"
+
+        android:layout_marginRight="8dp"
+        android:ellipsize="end"
+        android:maxLines="1"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintLeft_toLeftOf="@+id/tv_date_and_time"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.344"
+        tools:text="sample text sample text sample text s " />
+    <TextView
+        android:id="@+id/tv_date_and_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="2:33 AM 09-1-12"
+        style="@style/Text.Secondary"
+
+        app:layout_constraintBottom_toBottomOf="@+id/imv_date_and_time"
+        android:layout_marginBottom="0dp"
+        app:layout_constraintLeft_toRightOf="@+id/imv_date_and_time"
+        android:layout_marginLeft="8dp" />
+
+
+</android.support.constraint.ConstraintLayout>

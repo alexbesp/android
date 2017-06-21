@@ -28,4 +28,10 @@
             android:text="@string/open_contacts"
             android:onClick="openContects"
             android:id="@+id/button3" android:layout_below="@+id/button2" android:layout_centerHorizontal="true"/>
+    <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Звонить"
+            android:onClick="startDial"
+            android:id="@+id/button4" android:layout_below="@+id/button3" android:layout_centerHorizontal="true"/>
 </RelativeLayout>

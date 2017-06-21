@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">MyFragmentApp</string>
+    <string name="add_btn">Добавить</string>
+    <string name="st1_fragment">Первый фрагмент</string>
+    <string name="st2_fragment">Второй фрагмент</string>
+    <string name="str_start">Начать обновление</string>
+</resources>

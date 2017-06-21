@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context="com.example.alexanderbespalov.myfragmentapp.MainActivity" android:weightSum="1"
+        android:orientation="vertical">
+
+
+    <fragment
+            android:name="com.example.alexanderbespalov.myfragmentapp.ButtonFragment"
+            android:id="@+id/button_fragment"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:layout="@layout/button_layout"/>
+    <fragment
+            android:name="com.example.alexanderbespalov.myfragmentapp.ImageFragment"
+            android:id="@+id/image_fragment"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:scaleType="fitCenter"
+        />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/add_btn"
+            android:id="@+id/btnAdd"
+            android:onClick="onClickFragment"
+            android:layout_weight="1"/>
+
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Удалить"
+            android:id="@+id/btnRemove"
+            android:onClick="onClickFragment"
+            android:layout_weight="1"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/btnReplace"
+            android:layout_weight="1"
+            android:text="Заменить"
+            android:onClick="onClickFragment" />
+    </LinearLayout>
+
+    <Switch
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Возврат кнопкой"
+        android:id="@+id/switchBackStack"
+        android:layout_gravity="right"
+        android:checked="false" />
+
+    <LinearLayout
+        android:id="@+id/container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"/>
+
+    <fragment
+        android:id="@+id/three_fragment"
+        android:name="com.example.alexanderbespalov.myfragmentapp.ThreeFragment"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <LinearLayout
+        android:id="@+id/container2"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/str_start"
+        android:id="@+id/btnStart"
+        android:onClick="onProgressButton" />
+
+    <ProgressBar
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/progressBar"
+        android:layout_gravity="center_horizontal"
+        android:max="100"
+        android:indeterminate="false" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="0 %"
+        android:id="@+id/textProgress"
+        android:layout_gravity="right" />
+
+
+</LinearLayout>

@@ -8,6 +8,7 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.BitmapFactory;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.ActionBarActivity;
@@ -190,7 +191,9 @@ public class MainActivity extends ActionBarActivity {
         return list;
     }
 
+    private int counter = 0;
     public void showNotification(View view) {
+        counter++;
         Notification.Builder builder = new Notification.Builder(getApplicationContext());
 
         Intent intent = new Intent(getApplicationContext(), FinishActivity.class);
@@ -205,10 +208,25 @@ public class MainActivity extends ActionBarActivity {
                 .setContentTitle("Уведомление")
                 .setContentText("Нажмите, чтобы узнать секрет")
                 .setProgress(100, 20, true);
+           //     .setSound(Uri.parse("android.resource://" + getPackageName() + "/" + R.raw.boom_headshot));
 
         Notification notification = builder.build();
+      //  notification.defaults = Notification.DEFAULT_VIBRATE | Notification.DEFAULT_LIGHTS;
+       if (counter == 0) {
+           notification.sound = Uri.parse("android.resource://" + getPackageName() + "/" + R.raw.headshot); }
+        else {
+           notification.sound = Uri.parse("android.resource://" + getPackageName() + "/" + R.raw.boom_headshot);
+       }
 
+        long[] vibrate = new long[]{100, 100, 100, 200, 100, 100};
+        notification.vibrate = vibrate;
+        notification.flags = notification.flags | Notification.FLAG_INSISTENT | Notification.FLAG_ONGOING_EVENT;
         nm.notify(NOTIFICATION_ID, notification);
 
+
+    }
+
+    public void cancelNotification(View view) {
+        nm.cancel(NOTIFICATION_ID);
     }
 }
