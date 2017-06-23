@@ -5,4 +5,8 @@
     tools:context="com.example.alexanderbespalov.mvpedu.ui.activity.main.MainActivity">
 
 
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recycler_main"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
 </FrameLayout>
