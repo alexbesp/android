@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">MVP edu</string>
+    <string name="hello_world">Hello world</string>
+    <string name="timer">Please wait %1$d seconds</string>
 </resources>

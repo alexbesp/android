@@ -14,6 +14,7 @@
 
     <style name="Text.Primary">
         <item name="android:textSize">16sp</item>
+        <item name="android:textStyle">bold</item>
     </style>
 
     <style name="Text.Secondary">
