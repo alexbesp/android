@@ -8,8 +8,8 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 
 import com.example.alexanderbespalov.mvpedu.R;
-import com.example.alexanderbespalov.mvpedu.models.main.DbManager;
-import com.example.alexanderbespalov.mvpedu.models.main.Exercise;
+import com.example.alexanderbespalov.mvpedu.model.main.DbManager;
+import com.example.alexanderbespalov.mvpedu.model.main.Exercise;
 import com.example.alexanderbespalov.mvpedu.presentation.view.main.MainView;
 import com.example.alexanderbespalov.mvpedu.presentation.presenter.main.MainPresenter;
 
@@ -52,24 +52,6 @@ public class MainActivity extends MvpActivity implements MainView {
         //exercisesAdapter = new ExercisesAdapter(DbManager.getAllExercises());
         mainRecycler.setAdapter(new ExercisesAdapter(realm.where(Exercise.class).findAllAsync()));
 
-        Handler handler = new Handler();
-        handler.postDelayed(()-> (new DbManager())
-                .addExercise("com.example.alexanderbespalov.mvpedu.ui.activity.ex5.FragmentCounterActivity.class",
-                             "Exercise5",
-                             "Show 2 fragments with independent counters"),
-                             3000);
-
-        handler.postDelayed(()-> (new DbManager())
-                .addExercise("com.example.alexanderbespalov.mvpedu.ui.activity.ex5.FragmentCounterActivity.class",
-                             "Exercise5",
-                             "Show 2 fragments with independent counters"),
-                             5000);
-
-        handler.postDelayed(()-> (new DbManager())
-                .addExercise("com.example.alexanderbespalov.mvpedu.ui.activity.ex5.FragmentCounterActivity.class",
-                             "Exercise5",
-                             "Show 2 fragments with independent counters"),
-                             7000);
     }
 
     @Override

@@ -1,9 +1,6 @@
-package com.example.alexanderbespalov.mvpedu.models.main;
-
-import android.app.Activity;
+package com.example.alexanderbespalov.mvpedu.model.main;
 
 import io.realm.RealmObject;
-import io.realm.annotations.PrimaryKey;
 
 /**
  * Created by alexander.bespalov on 22.06.2017.

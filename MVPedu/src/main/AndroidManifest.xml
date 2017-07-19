@@ -5,8 +5,8 @@
         <activity android:name="com.example.alexanderbespalov.mvpedu.main.MainActivity"/>
         <activity android:name="com.example.alexanderbespalov.mvpedu.ex1.ShowMsgActivity"/>
         <activity android:name="com.example.alexanderbespalov.mvpedu.ex2.ShowTimerAndMsgActivity"/>
-        <activity
-            android:name="com.example.alexanderbespalov.mvpedu.blank.ShowTimerAndMsgAlertDialogActivity"/>
+        <activity android:name="com.example.alexanderbespalov.mvpedu.blank.ShowTimerAndMsgAlertDialogActivity"/>
+        <activity android:name="com.example.alexanderbespalov.mvpedu.bashOrg.BashOrgActivity"/>
     </application>
 
 </manifest>

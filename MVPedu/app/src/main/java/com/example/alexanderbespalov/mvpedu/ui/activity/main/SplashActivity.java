@@ -6,7 +6,7 @@ import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.ProgressBar;
 
-import com.example.alexanderbespalov.mvpedu.models.main.DbManager;
+import com.example.alexanderbespalov.mvpedu.model.main.DbManager;
 
 /**
  * Created by alexander.bespalov on 28.06.2017.

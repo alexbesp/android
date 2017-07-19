@@ -1,0 +1,7 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+          package="com.example.alexanderbespalov.musiceng">
+
+    <application>
+        <activity android:name="com.alexanderbespalov.musiceng.ui.activity.main.MainActivity"/>
+    </application>
+</manifest>

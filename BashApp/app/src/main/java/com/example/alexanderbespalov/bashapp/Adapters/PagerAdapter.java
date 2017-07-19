@@ -1,12 +1,15 @@
+/*
 package com.example.alexanderbespalov.bashapp.Adapters;
 
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
 
+*/
 /**
  * Created by alexander.bespalov on 01.07.2017.
- */
+ *//*
+
 
 public class PagerAdapter extends FragmentStatePagerAdapter {
     int numOfTabs;
@@ -31,3 +34,4 @@ public class PagerAdapter extends FragmentStatePagerAdapter {
         return 0;
     }
 }
+*/

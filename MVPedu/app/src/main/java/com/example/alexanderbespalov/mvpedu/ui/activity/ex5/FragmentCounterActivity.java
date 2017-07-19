@@ -26,7 +26,7 @@ public class FragmentCounterActivity extends AppCompatActivity {
     }
 
     private Fragment getFragment(int color) {
-        CounterFragment fragment = new CounterFragment();
+        CounterFragment fragment = CounterFragment.newInstance();
         Bundle args = new Bundle();
         args.putInt("argColor", color);
         fragment.setArguments(args);

@@ -8,7 +8,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.example.alexanderbespalov.mvpedu.R;
-import com.example.alexanderbespalov.mvpedu.models.main.Exercise;
+import com.example.alexanderbespalov.mvpedu.model.main.Exercise;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;

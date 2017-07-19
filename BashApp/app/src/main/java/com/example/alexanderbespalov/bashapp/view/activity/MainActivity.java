@@ -1,5 +1,6 @@
 package com.example.alexanderbespalov.bashapp.view.activity;
 
+import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.DividerItemDecoration;
@@ -28,6 +29,7 @@ public class MainActivity extends AppCompatActivity {
     @BindView(R.id.recycler_root_bash) RecyclerView recyclerViewBash;
     @BindView(R.id.recycler_root_abyss) RecyclerView recyclerViewAbyss;
     @BindView(R.id.tabhost) TabHost tabHost;
+    @BindView(R.id.swipe_refresh_layout_root) SwipeRefreshLayout swipeRefreshLayout;
 //   RecyclerView recyclerViewBash;
     List<PostModel> postsBash;
     List<PostModel> postsAbyss;
@@ -38,7 +40,32 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
 
-        setTitle("Bash 4ever");
+//        setTitle("Bash 4ever");
+        swipeRefreshLayout.setOnRefreshListener(() -> {
+            Toast.makeText(this, "Refresh started", Toast.LENGTH_SHORT).show();
+            swipeRefreshLayout.setRefreshing(true);
+
+            RetrofitApp.getApi().getData("bash", 50).enqueue(new Callback<List<PostModel>>() {
+                @Override
+                public void onResponse(Call<List<PostModel>> call, Response<List<PostModel>> response) {
+                    postsBash.clear();
+                    postsBash.addAll(response.body());
+                    recyclerViewBash.getAdapter().notifyDataSetChanged();
+                    swipeRefreshLayout.setRefreshing(false);
+
+                }
+                @Override
+                public void onFailure(Call<List<PostModel>> call, Throwable t) {
+                    Toast.makeText(MainActivity.this, "An error occured during networking", Toast.LENGTH_SHORT).show();
+                    Log.e("blyat",t.getMessage() + t.getCause(),t);
+                    swipeRefreshLayout.setRefreshing(false);
+                }
+            });
+
+        } );
+//        swipeRefreshLayout.setColorSchemeColors();
+
+
 
         postsBash = new ArrayList<>();
         postsAbyss = new ArrayList<>();
@@ -55,9 +82,8 @@ public class MainActivity extends AppCompatActivity {
         recyclerViewAbyss.addItemDecoration(dividerItemDecoration);
 
         PostsAdapter adapterBash = new PostsAdapter(postsBash);
-        recyclerViewBash.setAdapter(adapterBash);
-
         PostsAdapter adapterAbyss = new PostsAdapter(postsAbyss);
+        recyclerViewBash.setAdapter(adapterBash);
         recyclerViewAbyss.setAdapter(adapterAbyss);
 
         tabHost.setup(); // Инициализирует контейнер вкладок. Необходимо вызывать перед добавлением вкладок, если TabHost загружается методом findViewById()
@@ -85,14 +111,11 @@ public class MainActivity extends AppCompatActivity {
         }*/
 
         RetrofitApp.getApi().getData("bash", 50).enqueue(new Callback<List<PostModel>>() {
-
             @Override
             public void onResponse(Call<List<PostModel>> call, Response<List<PostModel>> response) {
                 postsBash.addAll(response.body());
                 recyclerViewBash.getAdapter().notifyDataSetChanged();
-
             }
-
             @Override
             public void onFailure(Call<List<PostModel>> call, Throwable t) {
                 Toast.makeText(MainActivity.this, "An error occured during networking", Toast.LENGTH_SHORT).show();
@@ -100,14 +123,11 @@ public class MainActivity extends AppCompatActivity {
             }
         });
         RetrofitApp.getApi().getData("abyss", 50).enqueue(new Callback<List<PostModel>>() {
-
             @Override
             public void onResponse(Call<List<PostModel>> call, Response<List<PostModel>> response) {
                 postsAbyss.addAll(response.body());
                 recyclerViewAbyss.getAdapter().notifyDataSetChanged();
-
             }
-
             @Override
             public void onFailure(Call<List<PostModel>> call, Throwable t) {
                 Toast.makeText(MainActivity.this, "An error occured during networking", Toast.LENGTH_SHORT).show();
